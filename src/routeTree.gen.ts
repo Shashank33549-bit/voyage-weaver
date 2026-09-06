@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BudgetRouteImport } from './routes/budget'
+import { Route as DiscoverRouteImport } from './routes/discover'
+import { Route as LayoverRouteImport } from './routes/layover'
+import { Route as MatchmakerRouteImport } from './routes/matchmaker'
+import { Route as PlannerRouteImport } from './routes/planner'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as VisaRouteImport } from './routes/visa'
+import { Route as TripsIndexRouteImport } from './routes/trips.index'
+import { Route as TripsTripIdRouteImport } from './routes/trips.$tripId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BudgetRoute = BudgetRouteImport.update({
+  id: '/budget',
+  path: '/budget',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscoverRoute = DiscoverRouteImport.update({
+  id: '/discover',
+  path: '/discover',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LayoverRoute = LayoverRouteImport.update({
+  id: '/layover',
+  path: '/layover',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MatchmakerRoute = MatchmakerRouteImport.update({
+  id: '/matchmaker',
+  path: '/matchmaker',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlannerRoute = PlannerRouteImport.update({
+  id: '/planner',
+  path: '/planner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisaRoute = VisaRouteImport.update({
+  id: '/visa',
+  path: '/visa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TripsIndexRoute = TripsIndexRouteImport.update({
+  id: '/trips/',
+  path: '/trips/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TripsTripIdRoute = TripsTripIdRouteImport.update({
+  id: '/trips/$tripId',
+  path: '/trips/$tripId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/budget': typeof BudgetRoute
+  '/discover': typeof DiscoverRoute
+  '/layover': typeof LayoverRoute
+  '/matchmaker': typeof MatchmakerRoute
+  '/planner': typeof PlannerRoute
+  '/profile': typeof ProfileRoute
+  '/visa': typeof VisaRoute
+  '/trips/$tripId': typeof TripsTripIdRoute
+  '/trips/': typeof TripsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/budget': typeof BudgetRoute
+  '/discover': typeof DiscoverRoute
+  '/layover': typeof LayoverRoute
+  '/matchmaker': typeof MatchmakerRoute
+  '/planner': typeof PlannerRoute
+  '/profile': typeof ProfileRoute
+  '/visa': typeof VisaRoute
+  '/trips/$tripId': typeof TripsTripIdRoute
+  '/trips': typeof TripsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/budget': typeof BudgetRoute
+  '/discover': typeof DiscoverRoute
+  '/layover': typeof LayoverRoute
+  '/matchmaker': typeof MatchmakerRoute
+  '/planner': typeof PlannerRoute
+  '/profile': typeof ProfileRoute
+  '/visa': typeof VisaRoute
+  '/trips/$tripId': typeof TripsTripIdRoute
+  '/trips/': typeof TripsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/budget'
+    | '/discover'
+    | '/layover'
+    | '/matchmaker'
+    | '/planner'
+    | '/profile'
+    | '/visa'
+    | '/trips/$tripId'
+    | '/trips/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/budget'
+    | '/discover'
+    | '/layover'
+    | '/matchmaker'
+    | '/planner'
+    | '/profile'
+    | '/visa'
+    | '/trips/$tripId'
+    | '/trips'
+  id:
+    | '__root__'
+    | '/'
+    | '/budget'
+    | '/discover'
+    | '/layover'
+    | '/matchmaker'
+    | '/planner'
+    | '/profile'
+    | '/visa'
+    | '/trips/$tripId'
+    | '/trips/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BudgetRoute: typeof BudgetRoute
+  DiscoverRoute: typeof DiscoverRoute
+  LayoverRoute: typeof LayoverRoute
+  MatchmakerRoute: typeof MatchmakerRoute
+  PlannerRoute: typeof PlannerRoute
+  ProfileRoute: typeof ProfileRoute
+  VisaRoute: typeof VisaRoute
+  TripsTripIdRoute: typeof TripsTripIdRoute
+  TripsIndexRoute: typeof TripsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/budget': {
+      id: '/budget'
+      path: '/budget'
+      fullPath: '/budget'
+      preLoaderRoute: typeof BudgetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discover': {
+      id: '/discover'
+      path: '/discover'
+      fullPath: '/discover'
+      preLoaderRoute: typeof DiscoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/layover': {
+      id: '/layover'
+      path: '/layover'
+      fullPath: '/layover'
+      preLoaderRoute: typeof LayoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/matchmaker': {
+      id: '/matchmaker'
+      path: '/matchmaker'
+      fullPath: '/matchmaker'
+      preLoaderRoute: typeof MatchmakerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planner': {
+      id: '/planner'
+      path: '/planner'
+      fullPath: '/planner'
+      preLoaderRoute: typeof PlannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/visa': {
+      id: '/visa'
+      path: '/visa'
+      fullPath: '/visa'
+      preLoaderRoute: typeof VisaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trips/': {
+      id: '/trips/'
+      path: '/trips'
+      fullPath: '/trips/'
+      preLoaderRoute: typeof TripsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trips/$tripId': {
+      id: '/trips/$tripId'
+      path: '/trips/$tripId'
+      fullPath: '/trips/$tripId'
+      preLoaderRoute: typeof TripsTripIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BudgetRoute: BudgetRoute,
+  DiscoverRoute: DiscoverRoute,
+  LayoverRoute: LayoverRoute,
+  MatchmakerRoute: MatchmakerRoute,
+  PlannerRoute: PlannerRoute,
+  ProfileRoute: ProfileRoute,
+  VisaRoute: VisaRoute,
+  TripsTripIdRoute: TripsTripIdRoute,
+  TripsIndexRoute: TripsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
