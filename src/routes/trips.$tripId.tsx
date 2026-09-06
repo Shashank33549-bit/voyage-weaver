@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { AuroraField } from "@/components/animations/rb-backgrounds";
 import { SplitText } from "@/components/animations/text";
-import { Reveal } from "@/components/animations/interactive";
+import { FeatureCard, Reveal } from "@/components/animations/interactive";
 import {
   Chip,
   HealthRing,
@@ -131,12 +131,16 @@ function TripDashboard() {
               </div>
             </div>
 
-            <div className="glass rounded-4xl flex flex-col items-center justify-center gap-3 p-6 text-center">
-              <HealthRing value={trip.health} size={168} />
-              <p className="text-sm text-muted-foreground">
-                Trip health across routing, pacing, requirements and spend.
-              </p>
-            </div>
+            {/* Single hero-level surface for the command center: React Bits
+                ElectricBorder frames the one number that matters most. */}
+            <FeatureCard className="h-full">
+              <div className="flex h-full flex-col items-center justify-center gap-3 p-6 text-center">
+                <HealthRing value={trip.health} size={168} />
+                <p className="text-sm text-muted-foreground">
+                  Trip health across routing, pacing, requirements and spend.
+                </p>
+              </div>
+            </FeatureCard>
           </div>
         </div>
       </section>
